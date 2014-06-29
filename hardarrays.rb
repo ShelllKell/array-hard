@@ -19,12 +19,6 @@ board = [
   ['O', 'X', 'O']
 ]
 
-# iterate through board
-# iterate through rows
-# compare move to "X", if equal increase x counter
-# compare move to "O", if equal increase o counter
-
-
 board.each do |row|
   x_counter = 0
   o_counter = 0
@@ -39,3 +33,31 @@ board.each do |row|
   p "Number of O's: #{o_counter}"
 end
 
+
+
+coordinates = [
+               ['x1 y1'],['x1 y2'],['x1 y3'],
+               ['x2 y1'],['x2 y2'],['x2 y3'],
+               ['x3 y1'],['x3 y2'],['x3 y3']
+            ]
+
+
+new_board = board.flatten
+new_coordinates = coordinates.flatten
+answer = new_board.zip(new_coordinates)
+
+answer.each do |x|
+  if x[0] == "X"
+    p x[1..2]
+  end
+end
+
+
+# iterate through board
+# iterate through rows
+# if its 0 keep moving
+# if it's x, put coordinates into array
+# put all 4 arrays into one big array
+
+
+#[[x1. y1][x2, y1][x2, y2][x3, y2]]
