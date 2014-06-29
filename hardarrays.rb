@@ -33,7 +33,11 @@ board.each do |row|
   p "Number of O's: #{o_counter}"
 end
 
-
+# iterate through board
+# iterate through rows
+# if its 0 keep moving
+# if it's x, put coordinates into array
+# put all 4 arrays into one big array
 
 coordinates = [
                ['x1 y1'],['x1 y2'],['x1 y3'],
@@ -48,16 +52,25 @@ answer = new_board.zip(new_coordinates)
 
 answer.each do |x|
   if x[0] == "X"
-    p x[1..2]
+    help = p x[1..2]
   end
+
+
+win = [['x1 y1'],['x1 y2'],['x1 y3']]
+[['x2 y1'],['x2 y2'],['x2 y3']]
+[['x3 y1'],['x3 y2'],['x3 y3']]
+[['x1 y1'],['x2 y1'],['x3 y1']]
+[['x1 y2'],['x2 y2'],['x3 y2']]
+[['x1 y3'],['x2 y3'],['x3 y3']]
+[['x1 y1'],['x2 y2'],['x3 y3']]
+[['x3 y1'],['x2 y2'],['x1 y3']]
+
+
+variable = help.include?(win)
+  if variable == true
+    puts "X won"
+  else
+    puts "O won"
+  end
+
 end
-
-
-# iterate through board
-# iterate through rows
-# if its 0 keep moving
-# if it's x, put coordinates into array
-# put all 4 arrays into one big array
-
-
-#[[x1. y1][x2, y1][x2, y2][x3, y2]]
